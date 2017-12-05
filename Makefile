@@ -1,5 +1,5 @@
 CURRENT_PATH  := $(notdir $(patsubst %/,%,$(CURDIR)))
-REPO_URI      := 
+REPO_URI      := hub.docker.com/r/jaspajjr
 NAME          := ${CURRENT_PATH}
 TAG           := $(shell git rev-parse --short HEAD)
 IMG_BUILD     := ${NAME}:tmp
@@ -7,6 +7,10 @@ IMG           := ${REPO_URI}/${NAME}:${TAG}
 LATEST        := ${REPO_URI}/${NAME}:latest
 
 all: pull build tag push
+
+
+foo:
+	-@ echo ${IMG}
 
 pull:
 	-@docker pull ${LATEST} && (echo "docker tag already exists"; exit 1)
