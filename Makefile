@@ -1,5 +1,5 @@
 CURRENT_PATH  := $(notdir $(patsubst %/,%,$(CURDIR)))
-REPO_URI      := hub.docker.com/r/jaspajjr
+REPO_URI      := jaspajjr
 NAME          := ${CURRENT_PATH}
 TAG           := $(shell git rev-parse --short HEAD)
 IMG_BUILD     := ${NAME}:tmp
